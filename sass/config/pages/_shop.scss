@@ -1,0 +1,37 @@
+@use "../variables";
+
+// =========================
+// Avone Sytles Main Section
+// =========================
+
+.shop {
+  min-height: 100vh;
+  background-image: url(/images/171.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: top;
+  background-size: cover;
+  min-height: 70vh;
+
+  .col {
+    @include variables.flexRow();
+    align-items: flex-end;
+    min-height: 70vh;
+
+    .shop-container {
+      min-height: 35vh;
+      @include variables.flexRow();
+      justify-content: flex-start;
+      width: 100%;
+
+      .shop-title-card {
+        @include variables.flexColumn();
+        align-items: flex-start;
+      }
+    }
+  }
+
+  @media (max-width: 1030px) {
+    background-position-x: right;
+  }
+}

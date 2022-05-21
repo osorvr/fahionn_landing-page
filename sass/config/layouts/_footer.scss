@@ -1,0 +1,125 @@
+@use "../variables";
+
+// ==============================
+// Footer Section & Bottom Footer
+// ==============================
+
+footer {
+  padding: 10% 0;
+  background-color: variables.$color-baby-green;
+
+  a {
+    @include variables.poppinsRegular();
+    @include variables.underlineOffSet();
+    color: variables.$color-faded-black;
+  }
+
+  .col {
+    @include variables.flexRow();
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .footer-one {
+      flex-basis: 40%;
+      padding: 15px 0;
+      @include variables.flexColumn();
+      align-items: flex-start;
+      gap: 1.5rem;
+
+      .footer-desc {
+        @include variables.flexColumn();
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .location {
+        @include variables.flexRow();
+        gap: 2rem;
+      }
+    }
+
+    .footer-two {
+      padding: 15px 0;
+      flex-basis: 50%;
+      @include variables.flexColumn();
+      gap: 4rem;
+      align-items: flex-start;
+
+      .input-email {
+        @include variables.flexColumn();
+        align-items: flex-start;
+        gap: 1.5rem;
+        width: 100%;
+
+        form {
+          display: flex;
+          width: 100%;
+
+          input {
+            background-color: variables.$color-white;
+            @include variables.poppinsRegular();
+            border-style: none;
+            width: 100%;
+            padding: 2% 5%;
+          }
+
+          button {
+            background-color: variables.$color-white;
+            @include variables.poppinsBold();
+            color: variables.$color-faded-black;
+          }
+        }
+      }
+
+      .footer-navigation {
+        width: 100%;
+        @include variables.flexRow();
+        justify-content: space-between;
+
+        ul {
+          padding: 10px;
+          list-style-type: none;
+
+          .footer-nav-header {
+            @include variables.poppinsBold();
+            padding: 5% 0;
+          }
+
+          li {
+            cursor: pointer;
+            @include variables.poppinsRegular();
+            padding: 10px 0;
+
+            &:hover {
+              @include variables.underlineOffSet();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ==============================
+// Bottom Footer
+// ==============================
+
+.bottom-footer {
+  min-height: 5vh;
+  background-color: variables.$color-baby-blue;
+  border-radius: 0 0 3.5rem 3.5rem;
+  @include variables.flexRow();
+  text-align: center;
+
+  p {
+    font-size: 0.8rem;
+    padding: 0 15px;
+  }
+
+  @media (max-width: 1850px) {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

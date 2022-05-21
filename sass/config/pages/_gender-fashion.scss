@@ -1,0 +1,68 @@
+@use "../variables";
+
+// ===========================
+// Gender Fashion Main Section
+// ===========================
+
+.gender {
+  background-color: variables.$color-white;
+  padding-top: 75px;
+  min-height: 100vh;
+
+  img {
+    width: 100%;
+  }
+
+  .gender-header {
+    min-height: 18vh;
+    @include variables.flexRow();
+    text-align: center;
+  }
+
+  .mens-gender-header {
+    min-height: 18vh;
+    @include variables.flexRow();
+    text-align: center;
+  }
+
+  .product-card {
+    list-style-type: none;
+    width: 100%;
+    @include variables.flexRow();
+    justify-content: space-between;
+    margin: auto;
+
+    @media (max-width: 1274px) {
+      justify-content: space-evenly;
+    }
+
+    .product-body {
+      margin: 20px;
+    }
+
+    .product-description {
+      font-family: variables.$font-poppins;
+      font-weight: bold;
+    }
+
+    .product-price {
+      list-style-type: none;
+      @include variables.flexRow();
+      justify-content: flex-start;
+      gap: 1.5rem;
+      font-family: variables.$font-poppins;
+
+      :nth-child(1) {
+        text-decoration-line: line-through;
+      }
+
+      :nth-child(2) {
+        color: variables.$color-red;
+      }
+    }
+
+    @media (max-width: 926px) {
+      justify-content: center;
+    }
+  }
+}

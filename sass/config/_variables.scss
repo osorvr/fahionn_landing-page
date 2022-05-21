@@ -1,0 +1,167 @@
+// ===============
+// Universal Reset
+// ===============
+
+*,
+*::before,
+*::after {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+// ====
+// Body
+// ====
+
+body {
+  background-image: url(/images/bg.png);
+  background-position: left;
+  background-size: 525px;
+  z-index: -10;
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 3.5rem;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  @media (max-width: 1850px) {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+// ======
+// Colors
+// ======
+
+$color-faded-black: #22262a;
+$color-white: white;
+$color-red: #cf2929;
+$color-baby-blue: #e7f5f8;
+$color-baby-green: #f2f8fc;
+
+// =====
+// Fonts
+// =====
+
+$font-poppins: "Poppins", sans-serif;
+
+// ======
+// Mixins
+// ======
+
+@mixin flexRow {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin poppinsRegular {
+  font-family: $font-poppins;
+  font-weight: 400;
+}
+
+@mixin poppinsMedium {
+  font-family: $font-poppins;
+  font-weight: 600;
+}
+
+@mixin poppinsBold {
+  font-family: $font-poppins;
+  font-weight: 800;
+}
+
+@mixin underlineOffSet {
+  text-decoration-line: underline;
+  text-underline-offset: 5px;
+}
+
+// ==================
+// Single Column Grid
+// ==================
+
+.col {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+// ============
+// Element Tags
+// ============
+
+h1 {
+  font-family: $font-poppins;
+  color: $color-faded-black;
+  font-weight: bold;
+  font-size: calc(2.5vw + 1.5rem + 1vh);
+}
+
+h2 {
+  font-family: $font-poppins;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: $color-faded-black;
+}
+
+h3 {
+  font-family: $font-poppins;
+  font-weight: 600;
+  font-size: 18px;
+  color: $color-faded-black;
+}
+
+h4 {
+  font-family: $font-poppins;
+  font-weight: normal;
+  font-size: 1.2rem;
+  color: $color-faded-black;
+}
+
+h5 {
+  font-family: $font-poppins;
+  font-weight: normal;
+  font-size: 1rem;
+  color: $color-faded-black;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-family: $font-poppins;
+  font-weight: 400;
+  font-size: 18px;
+  color: $color-faded-black;
+}
+
+button {
+  cursor: pointer;
+  background-color: $color-faded-black;
+  color: $color-white;
+  padding: 2% 7%;
+  outline-style: none;
+  border-style: none;
+  @include poppinsRegular();
+
+  &:hover {
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+  }
+}

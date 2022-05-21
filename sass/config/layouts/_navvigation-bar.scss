@@ -1,0 +1,115 @@
+@use "../variables";
+@use "hamburger-menu";
+
+// ==============
+// Navigation Bar
+// ==============
+
+.nav-bar {
+  margin: 100px;
+  border-radius: 3.5rem 3.5rem 0 0;
+  background-color: variables.$color-white;
+  min-height: 10vh;
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  margin: auto;
+  @include variables.flexRow();
+  transition: min-height 0.5s ease-in-out;
+  z-index: 1000;
+
+  &.on-scroll-nav {
+    min-height: 8vh;
+    border-radius: 0;
+    background-color: variables.$color-baby-blue;
+  }
+
+  a {
+    color: variables.$color-faded-black;
+    transition: 0.5s ease-in-out;
+
+    &.active {
+      text-decoration-line: underline;
+      text-underline-offset: 5px;
+      font-weight: bold;
+    }
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+
+    .nav-item-one {
+      @include variables.poppinsBold();
+      color: variables.$color-faded-black;
+      font-size: 1.8rem;
+    }
+
+    .nav-item-two {
+      @include variables.flexRow();
+      @include variables.poppinsRegular();
+      color: variables.$color-faded-black;
+      gap: 1.5rem;
+
+      @media (max-width: 1280px) {
+        a {
+          display: none;
+        }
+      }
+    }
+
+    .nav-item-three {
+      @include variables.flexRow();
+      justify-content: flex-end;
+      gap: 2rem;
+
+      @media (max-width: 620px) {
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Sub Navigation Bar
+
+.sub-nav-bar {
+  display: none;
+  position: sticky;
+  top: 8%;
+  @include variables.poppinsRegular();
+  color: variables.$color-faded-black;
+  padding: 30px 0;
+  background-color: variables.$color-baby-blue;
+  z-index: 1000;
+
+  img {
+    padding: 15px 0;
+    cursor: pointer;
+    display: none;
+
+    @media (max-width: 620px) {
+      display: block;
+    }
+  }
+
+  nav {
+    @include variables.flexColumn();
+    align-content: flex-start;
+    align-items: flex-start;
+
+    a {
+      @include variables.poppinsRegular();
+      color: variables.$color-faded-black;
+      padding: 5px 0;
+
+      &.active {
+        text-decoration-line: underline;
+        text-underline-offset: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+}

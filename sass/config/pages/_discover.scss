@@ -1,0 +1,45 @@
+@use "../variables";
+
+// =====================
+// Discover Main Section
+// =====================
+
+.discover {
+  background-image: url(/images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: top;
+  background-size: cover;
+  min-height: 70vh;
+
+  P {
+    font-weight: 600;
+  }
+
+  .col {
+    @include variables.flexRow();
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 70vh;
+
+    .discover-container {
+      min-height: 35vh;
+      @include variables.flexRow();
+      justify-content: flex-end;
+
+      .discover-title-card {
+        width: 100%;
+        @include variables.flexColumn();
+        align-items: flex-start;
+
+        .discover-btns {
+          padding-top: 35px;
+          @include variables.flexRow();
+          justify-content: flex-start;
+          gap: 1.5rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
